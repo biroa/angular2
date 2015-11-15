@@ -2,12 +2,13 @@ import {bootstrap, Component} from "angular2/angular2";
 import {TodoInput} from "./todoInput";
 
 @Component({
-    selector:'app',
+    selector: 'app',
     directives: [TodoInput],
     template: `
         <div><todo-input></todo-input></div>
     `
 })
-class App{}
+class App {
+}
 
 bootstrap(App);
