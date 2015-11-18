@@ -3,12 +3,13 @@ import {TodoInput} from "./todoInput";
 import {TodoService} from "./todoService";
 
 @Component({
-    selector:'app',
+    selector: 'app',
     directives: [TodoInput],
     template: `
         <div><todo-input></todo-input></div>
     `
 })
-class App{}
+class App {
+}
 
 bootstrap(App, [TodoService]);

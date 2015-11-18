@@ -7,16 +7,15 @@ import {TodoService} from "./todoService";
         <button on-click="onClick($event, logMe.value)">Log Input</button>
     `
 })
-export class TodoInput{
+export class TodoInput {
     todoService;
-    constructor(
-        @Inject(TodoService) todoService
-    ){
+
+    constructor(@Inject(TodoService) todoService) {
         this.todoService = todoService;
         console.log(todoService);
     }
 
-    onClick(event, value){
+    onClick(event, value) {
         this.todoService.addTodo(value);
         console.log(this.todoService.todos);
     }
