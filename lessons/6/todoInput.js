@@ -1,4 +1,7 @@
-import {Component, Inject} from "angular2/angular2";
+/**
+ * Created by biroa on 11/19/2015.
+ */
+import {Component} from "angular2/angular2";
 import {TodoService} from "./todoService";
 @Component({
     selector: 'todo-input',
@@ -7,16 +10,16 @@ import {TodoService} from "./todoService";
         <button on-click="onClick($event, logMe.value)">Log Input</button>
     `
 })
-export class TodoInput {
-    todoService;
+export class TodoInput{
 
-    constructor(@Inject(TodoService) todoService) {
-        this.todoService = todoService;
-        console.log(todoService);
-    }
+    constructor(
+        public todoService:TodoService
+){
+    console.log(todoService);
+}
 
-    onClick(event, value) {
-        this.todoService.addTodo(value);
-        console.log(this.todoService.todos);
-    }
+onClick(event, value){
+    this.todoService.addTodo(value);
+    console.log(this.todoService.todos);
+}
 }
